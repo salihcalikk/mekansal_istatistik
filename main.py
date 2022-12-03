@@ -70,7 +70,9 @@ for i in test_arrays:
         result_list.append(result)
 
     elif i["method"] == "kruskal-wallis-h-test":
-        print("KruskalWallisHTest")
+        kruskal_wallis = KruskalWallisHTest(array=i["array"], q=i["q"])
+        result = kruskal_wallis.result(count_column="count", sample_column="borough")
+        result_list.append(result)
 
 for i in result_list:
     print(i)

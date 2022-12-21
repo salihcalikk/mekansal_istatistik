@@ -245,19 +245,3 @@ class KruskalWallisHTest:
              güven düzeyinde farklı olmadığı sonucuna varılmıştır."""
             result['description'] = re.sub(' +', ' ', result_text).replace('\n', '')
         return result
-
-
-
-
-
-        # result = {"q": f"""%{self.q}""", "p_value": p_value,
-        #           "u_value": u_value}
-        # if p_value < self.q:
-        #     result_text = f"""Yokluk Hipotezi Reddedilmiştir. Örneklemin %{self.q}
-        #              güven düzeyinde farklı olduğu sonucuna varılmıştır. İstatistiksel açıdan anlamlı bulunmuştur."""
-        #     result['description'] = re.sub(' +', ' ', result_text).replace('\n', '')
-        # else:
-        #     result_text = f"""Yokluk Hipotezi Reddedilememiştir. Örneklemin %{self.q}
-        #              güven düzeyinde farklı olmadığı sonucuna varılmıştır."""
-        #     result['description'] = re.sub(' +', ' ', result_text).replace('\n', '')
-        # return result

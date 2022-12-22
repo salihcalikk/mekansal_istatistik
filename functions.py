@@ -59,14 +59,14 @@ class ChiKare:
         alpha = self.get_alpha()
         result_text = ""
         result = {"q": f"""%{int(alpha["q"] * 100)}""", "df": alpha["df"],
-                "alpha": alpha["result"], "chi-kare": chi_kare}
+                "critical_table_value": alpha["result"], "chi-kare": chi_kare}
         if chi_kare >= alpha["result"]:
             result_text = f"""Yokluk Hipotezi Reddedilmiştir. Örneklemin %{int(alpha["q"] * 100)}
              güven düzeyinde farklı olduğu sonucuna varılmıştır. İstatistiksel açıdan anlamlı bulunmuştur."""
 
             result['description'] = re.sub(' +', ' ', result_text).replace('\n', '')
         else:
-            result_text = f"""Yokluk Hipotezi Reddedilememiştir. Örneklemin %{alpha["q"] * 100}
+            result_text = f"""Yokluk Hipotezi Reddedilememiştir. Örneklemin %{int(alpha["q"] * 100)}
              güven düzeyinde farklı olmadığı sonucuna varılmıştır."""
             result['description'] = re.sub(' +', ' ', result_text).replace('\n', '')
         return result
@@ -234,14 +234,14 @@ class KruskalWallisHTest:
         alpha = self.get_alpha(sample_list)
         result_text = ""
         result = {"q": f"""%{int(alpha["q"] * 100)}""", "df": alpha["df"],
-                "alpha": alpha["result"], "h-test": h_test}
+                "critical_table_value": alpha["result"], "h-test": h_test}
         if h_test >= alpha["result"]:
             result_text = f"""Yokluk Hipotezi Reddedilmiştir. Örneklemin %{int(alpha["q"] * 100)}
              güven düzeyinde farklı olduğu sonucuna varılmıştır. İstatistiksel açıdan anlamlı bulunmuştur."""
 
             result['description'] = re.sub(' +', ' ', result_text).replace('\n', '')
         else:
-            result_text = f"""Yokluk Hipotezi Reddedilememiştir. Örneklemin %{alpha["q"] * 100}
+            result_text = f"""Yokluk Hipotezi Reddedilememiştir. Örneklemin %{int(alpha["q"] * 100)}
              güven düzeyinde farklı olmadığı sonucuna varılmıştır."""
             result['description'] = re.sub(' +', ' ', result_text).replace('\n', '')
         return result
